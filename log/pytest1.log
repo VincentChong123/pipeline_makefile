@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.14, pytest-8.3.2, pluggy-1.5.0 -- /home/vin/01-prj/tfip_da/public/pipeline_makefile/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/vin/01-prj/tfip_da/public/pipeline_makefile
+plugins: anyio-4.4.0
+collecting ... collected 1 item
+
+test/test_data_processor.py::test_sum_column PASSED                      [100%]
+
+============================== 1 passed in 0.24s ===============================
