@@ -21,18 +21,8 @@ test: install
 
 # Target to check pytest.log for pass/fail
 check: test
-	@grep "1 passed" $(LOGFILE) && echo "All tests passed!" || (echo "Some tests failed!" && exit 1)
+	@grep "1 passed" $(LOGFILE)
 
 # Target to clean up the environment
 clean:
 	rm -rf $(VENV_DIR) $(LOGFILE)
-
-# # Check if Python 3.11 is available
-# check-python3.11:
-# ifeq ($(PYTHON3.11_PATH),)
-#     $(error Python 3.11 is not available on this system)
-# else
-#     @echo "Python 3.11 found at $(PYTHON3.11_PATH)"
-#     @echo "ls -tall $(PYTHON3.11_PATH):"
-#     @ls -tall $(PYTHON3.11_PATH)
-# endif
