@@ -1,0 +1,28 @@
+# Define variables
+VENV_DIR=venv
+PYTHON=$(VENV_DIR)/bin/python
+PIP=$(VENV_DIR)/bin/pip
+PYTEST=$(VENV_DIR)/bin/pytest
+LOGFILE=pytest.log
+CSV_FILE=sample.csv
+
+# Target to create a virtual environment using Python 3.11
+$(VENV_DIR)/bin/activate: 
+	python3 -m venv $(VENV_DIR)
+
+# Target to install dependencies
+install: $(VENV_DIR)/bin/activate
+	$(PIP) install --upgrade pip
+	$(PIP) install pandas pytest
+
+# Target to run pytest and log results to pytest.log
+test: install
+	$(PYTEST) -v > $(LOGFILE)
+
+# Target to check pytest.log for pass/fail
+check: test
+	@grep "1 passed" $(LOGFILE) && echo "All tests passed!" || (echo "Some tests failed!" && exit 1)
+
+# Target to clean up the environment
+clean:
+	rm -rf $(VENV_DIR) $(LOGFILE)
