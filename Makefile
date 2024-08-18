@@ -8,12 +8,12 @@ CSV_FILE=sample.csv
 
 # Target to create a virtual environment using Python 3.11
 $(VENV_DIR)/bin/activate: 
-	python3 -m venv $(VENV_DIR)
+	python3.11 -m venv $(VENV_DIR)
 
 # Target to install dependencies
 install: $(VENV_DIR)/bin/activate
 	$(PIP) install --upgrade pip
-	$(PIP) install pandas pytest
+	$(PIP) install -q -r ./src/requirements.txt
 
 # Target to run pytest and log results to pytest.log
 test: install
