@@ -4,19 +4,6 @@ cachedir: .pytest_cache
 rootdir: /home/vin/01-prj/tfip_da/public/pipeline_makefile
 collecting ... collected 1 item
 
-test/test_data_processor.py::test_sum_column FAILED                      [100%]
+test/test_data_processor.py::test_sum_column PASSED                      [100%]
 
-=================================== FAILURES ===================================
-_______________________________ test_sum_column ________________________________
-
-    def test_sum_column():
-        file_path = os.path.join(os.path.dirname(__file__), '..', 'sample.csv')
-        result = read_and_sum_column(file_path)
->       assert result == 7, f"Expected sum is 6, but got {result}"
-E       AssertionError: Expected sum is 6, but got 6
-E       assert np.int64(6) == 7
-
-test/test_data_processor.py:7: AssertionError
-=========================== short test summary info ============================
-FAILED test/test_data_processor.py::test_sum_column - AssertionError: Expecte...
-============================== 1 failed in 0.29s ===============================
+============================== 1 passed in 0.24s ===============================
