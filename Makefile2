@@ -1,0 +1,12 @@
+# Define variables
+VENV_DIR=venv
+PYTHON=$(VENV_DIR)/bin/python
+PIP=$(VENV_DIR)/bin/pip
+PYTEST=$(VENV_DIR)/bin/pytest
+LOGFILE=./log
+# Virtual env
+
+# Install dependencies
+
+# pytest
+test: install

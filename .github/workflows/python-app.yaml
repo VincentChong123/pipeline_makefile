@@ -24,11 +24,11 @@ jobs:
 
     - name: Run Makefile targets
       run: |
-        make clean
-        make check
+        make -f Makefile1 clean
+        make -f Makefile1 check
 
     - name: Upload pytest.log
       uses: actions/upload-artifact@v3
       with:
-        name: pytest-log
-        path: pytest.log
+        name: ./log/pytest-log
+        path: ./log/pytest1.log

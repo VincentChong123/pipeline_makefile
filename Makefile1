@@ -3,7 +3,7 @@ VENV_DIR=venv
 PYTHON=$(VENV_DIR)/bin/python
 PIP=$(VENV_DIR)/bin/pip
 PYTEST=$(VENV_DIR)/bin/pytest
-LOGFILE=pytest.log
+LOGFILE=./log/pytest1.log
 CSV_FILE=sample.csv
 
 # Target to create a virtual environment using Python 3.11
@@ -26,3 +26,13 @@ check: test
 # Target to clean up the environment
 clean:
 	rm -rf $(VENV_DIR) $(LOGFILE)
+
+# # Check if Python 3.11 is available
+# check-python3.11:
+# ifeq ($(PYTHON3.11_PATH),)
+#     $(error Python 3.11 is not available on this system)
+# else
+#     @echo "Python 3.11 found at $(PYTHON3.11_PATH)"
+#     @echo "ls -tall $(PYTHON3.11_PATH):"
+#     @ls -tall $(PYTHON3.11_PATH)
+# endif
